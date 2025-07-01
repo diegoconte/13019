@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Gráfico do Decreto de Parcerias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 1.5rem; /* p-6 */
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensure cards fill grid cell height */
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02); /* Slight lift and scale on hover */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Larger shadow on hover */
+        }
+        .card-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1a56db; /* A vibrant blue for titles */
+            margin-bottom: 1rem; /* mb-4 */
+            border-bottom: 2px solid #3b82f6; /* Blue underline */
+            padding-bottom: 0.5rem;
+        }
+        .card-list {
+            list-style: disc;
+            margin-left: 1.25rem; /* ml-5 */
+            color: #4b5563; /* text-gray-700 */
+            flex-grow: 1; /* Allow list to grow and push footer down */
+        }
+        .card-list li {
+            margin-bottom: 0.5rem; /* mb-2 */
+            line-height: 1.5;
+        }
+        .card-list li:last-child {
+            margin-bottom: 0;
+        }
+        .flow-step {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .flow-description {
+            font-weight: 400;
+            color: #4b5563;
+        }
+        .gemini-button {
+            background-color: #3b82f6; /* Blue */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gemini-button:hover {
+            background-color: #2563eb; /* Darker blue */
+        }
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-10">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-8 md:mb-12 rounded-xl bg-white p-4 shadow-lg">
+            Resumo Gráfico: Decreto Municipal de Parcerias
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Título e Ementa -->
+            <div class="card">
+                <h2 class="card-title">Título e Ementa</h2>
+                <ul class="card-list">
+                    <li>Regulamenta a Lei nº 13.019/2014 (Marco Regulatório das OSC).</li>
+                    <li>Dispõe sobre parcerias entre Administração Pública Municipal e Organizações da Sociedade Civil (OSC).</li>
+                    <li>Institui o Comitê Central de Gestão e Coordenação das Parcerias (CCGCAP).</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Capítulo I - Disposições Preliminares -->
+            <div class="card">
+                <h2 class="card-title">Capítulo I: Disposições Preliminares</h2>
+                <ul class="card-list">
+                    <li>Define normas gerais e princípios (gestão democrática, transparência).</li>
+                    <li>**Prefeito:** Designa comissões, autoriza chamamentos, celebra parcerias, decide contas.</li>
+                    <li>Descreve os instrumentos de parceria: Termo de Colaboração, Termo de Fomento e Acordo de Cooperação.</li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Capítulo II - Do Planejamento -->
+            <div class="card">
+                <h2 class="card-title">Capítulo II: Do Planejamento</h2>
+                <ul class="card-list">
+                    <li>Diretrizes para o planejamento das ações da Administração Pública.</li>
+                    <li>Previsão de recursos materiais e tecnológicos.</li>
+                    <li>Busca por padronização de objetivos, metas e custos.</li>
+                    <li>Promoção da capacitação de agentes públicos e OSCs.</li>
+                    <li>Elaboração de manuais e diagnósticos da realidade.</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Capítulo III - Do Processo de Seleção e Celebração -->
+            <div class="card">
+                <h2 class="card-title">Capítulo III: Seleção e Celebração</h2>
+                <ul class="card-list">
+                    <li>Etapas do processo: chamamento público, avaliação de propostas, verificação de requisitos, aprovação do plano de trabalho, pareceres técnico/jurídico, celebração.</li>
+                    <li>**Comissão de Seleção:** Processa e julga chamamentos públicos.</li>
+                    <li>Requisitos para celebração: regularidade jurídica, fiscal, trabalhista, experiência e capacidade técnica.</li>
+                    <li>Previsão para atuação em rede entre OSCs.</li>
+                </ul>
+            </div>
+
+            <!-- Card 5: Capítulo IV - Chamamento Público Dispensado, Dispensável e Inexigível -->
+            <div class="card">
+                <h2 class="card-title">Capítulo IV: Chamamento Público</h2>
+                <ul class="card-list">
+                    <li>Define as hipóteses de dispensa e inexigibilidade do chamamento público (e.g., emendas parlamentares, urgência, inviabilidade de competição).</li>
+                    <li>Exige justificativa formal para a não realização do chamamento público.</li>
+                </ul>
+            </div>
+
+            <!-- Card 6: Capítulo V - Da Execução da Parceria -->
+            <div class="card">
+                <h2 class="card-title">Capítulo V: Da Execução da Parceria</h2>
+                <ul class="card-list">
+                    <li>Regras para compras e contratações com recursos da parceria (cotação prévia, uso de atas, contratação direta em casos específicos).</li>
+                    <li>Normas para pagamento das despesas (comprovação fiscal, transferência eletrônica).</li>
+                    <li>Procedimentos para alterações de valores ou metas no plano de trabalho.</li>
+                </ul>
+            </div>
+
+            <!-- Card 7: Capítulo VI - Da Gestão, Monitoramento e Avaliação -->
+            <div class="card">
+                <h2 class="card-title">Capítulo VI: Gestão, Monitoramento e Avaliação</h2>
+                <ul class="card-list">
+                    <li>**Gestor da Parceria:** Acompanha e fiscaliza a execução, informa irregularidades, emite parecer técnico conclusivo.</li>
+                    <li>**Comissão de Monitoramento e Avaliação:** Nomeada para apoio e acompanhamento, homologa relatórios.</li>
+                    <li>**Relator (membro da Comissão):** Emite o Relatório Técnico de Monitoramento e Avaliação.</li>
+                    <li>**Limite de Relatórios:** Máximo de 5 Relatórios Técnicos por relator/ano, com ampliação de até 100% por decisão unânime da Comissão.</li>
+                    <li>Previsão de visitas in loco e pesquisa de satisfação.</li>
+                </ul>
+            </div>
+
+            <!-- Card 8: Capítulo VII - Do Procedimento de Manifestação de Interesse Social -->
+            <div class="card">
+                <h2 class="card-title">Capítulo VII: Manifestação de Interesse Social</h2>
+                <ul class="card-list">
+                    <li>Instrumento para que OSCs, movimentos sociais e cidadãos proponham parcerias.</li>
+                    <li>Requisitos mínimos para a proposta (identificação, interesse público, diagnóstico).</li>
+                    <li>Etapas de avaliação da proposta pela Administração Pública.</li>
+                </ul>
+            </div>
+
+            <!-- Card 9: Capítulo VIII - Da Transparência e Divulgação das Ações -->
+            <div class="card">
+                <h2 class="card-title">Capítulo VIII: Transparência e Divulgação</h2>
+                <ul class="card-list">
+                    <li>Obrigatoriedade da Administração Pública de divulgar parcerias e planos de trabalho em site oficial.</li>
+                    <li>Divulgação de meios para denúncias sobre aplicação irregular de recursos.</li>
+                    <li>Obrigações de divulgação das OSCs em suas sedes e sites.</li>
+                </ul>
+            </div>
+
+            <!-- Card 10: Capítulo IX - Da Prestação de Contas -->
+            <div class="card">
+                <h2 class="card-title">Capítulo IX: Da Prestação de Contas</h2>
+                <ul class="card-list">
+                    <li>Objetivo de demonstrar resultados e avaliar a execução.</li>
+                    <li>Prestação de contas anual (obrigatória para parcerias com duração > 1 ano).</li>
+                    <li>Documentos exigidos (relatório de execução do objeto, financeiro).</li>
+                    <li>Análise da prestação de contas (nexo causal, conformidade, conciliação bancária).</li>
+                    <li>Guarda de documentos por 10 anos.</li>
+                    <li>Classificação das contas: regulares, com ressalvas, irregulares.</li>
+                    <li>Possibilidade de ressarcimento ao erário por ações compensatórias.</li>
+                </ul>
+            </div>
+
+            <!-- Card 11: Capítulo X - Do Comitê Central de Gestão e Coordenação das Parcerias (CCGCAP) -->
+            <div class="card">
+                <h2 class="card-title">Capítulo X: Comitê Central de Gestão e Coordenação das Parcerias (CCGCAP)</h2>
+                <ul class="card-list">
+                    <li>Instituição como órgão superior, consultivo e integrador.</li>
+                    <li>Objetivos: integrar dados, apoio técnico, aprimorar controles, padronizar.</li>
+                    <li>Competências: analisar relatórios, propor diretrizes, emitir pareceres.</li>
+                    <li>Composição e funcionamento.</li>
+                    <li>**Vedações:** Membros não podem compor outras Comissões ou atuar como Gestores de Parcerias.</li>
+                    <li>**Dedicação de Tempo:** Considerada parte das funções regulares, gerida e priorizada no órgão de origem.</li>
+                </ul>
+            </div>
+
+            <!-- Card 12: Capítulo XI - Das Sanções -->
+            <div class="card">
+                <h2 class="card-title">Capítulo XI: Das Sanções</h2>
+                <ul class="card-list">
+                    <li>Sanções aplicáveis por execução em desacordo: advertência, suspensão temporária, declaração de inidoneidade.</li>
+                    <li>Competência exclusiva do Prefeito Municipal para suspensão e inidoneidade.</li>
+                    <li>Prazos de prescrição para aplicação de penalidades.</li>
+                </ul>
+            </div>
+
+            <!-- Card 13: Capítulo XII - Das Disposições Finais -->
+            <div class="card">
+                <h2 class="card-title">Capítulo XII: Disposições Finais</h2>
+                <ul class="card-list">
+                    <li>Previsão de conciliação e solução administrativa de dúvidas jurídicas.</li>
+                    <li>Regime jurídico de convênios existentes.</li>
+                    <li>Programas de capacitação para agentes e OSCs.</li>
+                    <li>Exceções de aplicação do Decreto (patrocínios, OSCIPs).</li>
+                    <li>Revogação expressa do Decreto nº 4.476, de 02 de fevereiro de 2017.</li>
+                </ul>
+            </div>
+
+            <!-- Card 14: Fluxo da Parceria e Papéis -->
+            <div class="card lg:col-span-3">
+                <h2 class="card-title">Fluxo da Parceria e Papéis Principais</h2>
+                <ul class="card-list">
+                    <li><span class="flow-step">1. Início da Parceria:</span>
+                        <span class="flow-description">Proposta da OSC ou iniciativa da Administração Pública. Pode passar por Procedimento de Manifestação de Interesse Social.</span></li>
+                    <li><span class="flow-step">2. Seleção:</span>
+                        <span class="flow-description">Realização de Chamamento Público. A **Comissão de Seleção** analisa e julga as propostas. O **Prefeito** homologa o resultado.</span></li>
+                    <li><span class="flow-step">3. Celebração:</span>
+                        <span class="flow-description">Aprovação do Plano de Trabalho e emissão de pareceres técnico e jurídico. O **Prefeito** celebra o Termo de Colaboração, Fomento ou Acordo de Cooperação.</span></li>
+                    <li><span class="flow-step">4. Execução:</span>
+                        <span class="flow-description">A OSC executa as atividades. O **Gestor da Parceria** acompanha e fiscaliza a execução, informando irregularidades.</span></li>
+                    <li><span class="flow-step">5. Monitoramento e Avaliação:</span>
+                        <span class="flow-description">A **Comissão de Monitoramento e Avaliação** realiza o acompanhamento. Um **Relator** (membro da Comissão) elabora o Relatório Técnico de Monitoramento e Avaliação, que é homologado pela Comissão. Pesquisas de satisfação podem ser realizadas.</span></li>
+                    <li><span class="flow-step">6. Prestação de Contas:</span>
+                        <span class="flow-description">A OSC apresenta a prestação de contas (anual e final). Um **Relator** da Comissão de Monitoramento e Avaliação elabora o Relatório Técnico de Monitoramento e Avaliação (se aplicável), que é homologado pela **Comissão de Monitoramento e Avaliação**. O **Gestor da Parceria** emite o parecer técnico conclusivo, considerando este e outros documentos. A decisão final sobre a aprovação ou rejeição das contas é do **Prefeito**.</span></li>
+                    <li><span class="flow-step">7. Coordenação Superior (CCGCAP):</span>
+                        <span class="flow-description">O **Comitê Central de Gestão e Coordenação das Parcerias (CCGCAP)** atua transversalmente, coordenando, consolidando informações e assessorando as demais instâncias, emitindo pareceres consultivos e propondo melhorias. Não substitui as atribuições das Comissões ou Gestores.</span></li>
+                </ul>
+            </div>
+
+            <!-- New Card for Gemini API Q&A -->
+            <div class="card lg:col-span-3">
+                <h2 class="card-title">Pergunte ao Gemini sobre o Decreto ✨</h2>
+                <div class="mb-4">
+                    <textarea id="questionInput" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Faça sua pergunta sobre o decreto aqui..."></textarea>
+                </div>
+                <button id="askGeminiButton" class="gemini-button">
+                    <span id="buttonText">Perguntar ao Gemini ✨</span>
+                    <div id="loadingSpinner" class="loading-spinner ml-2 hidden"></div>
+                </button>
+                <div id="geminiAnswer" class="mt-6 p-4 bg-blue-50 rounded-md border border-blue-200 text-gray-800 hidden">
+                    <h3 class="font-bold text-blue-800 mb-2">Resposta do Gemini:</h3>
+                    <p id="answerContent"></p>
+                </div>
+                <div id="errorMessage" class="mt-4 p-3 bg-red-100 rounded-md border border-red-300 text-red-700 hidden">
+                    Ocorreu um erro ao processar sua pergunta. Tente novamente.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('askGeminiButton').addEventListener('click', async () => {
+            const questionInput = document.getElementById('questionInput');
+            const geminiAnswer = document.getElementById('geminiAnswer');
+            const answerContent = document.getElementById('answerContent');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const buttonText = document.getElementById('buttonText');
+            const errorMessage = document.getElementById('errorMessage');
+
+            const prompt = questionInput.value.trim();
+
+            if (!prompt) {
+                alert('Por favor, digite sua pergunta.');
+                return;
+            }
+
+            // Show loading state
+            buttonText.textContent = 'Perguntando...';
+            loadingSpinner.classList.remove('hidden');
+            geminiAnswer.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            answerContent.textContent = ''; // Clear previous answer
+
+            try {
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    answerContent.textContent = text;
+                    geminiAnswer.classList.remove('hidden');
+                } else {
+                    errorMessage.classList.remove('hidden');
+                    console.error('Unexpected API response structure:', result);
+                }
+            } catch (error) {
+                errorMessage.classList.remove('hidden');
+                console.error('Error calling Gemini API:', error);
+            } finally {
+                // Hide loading state
+                buttonText.textContent = 'Perguntar ao Gemini ✨';
+                loadingSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
