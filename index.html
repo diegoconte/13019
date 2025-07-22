@@ -3,722 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capacitação Lei 13.019/2014 - Parcerias Voluntárias</title>
+    <!-- O título deve ser o do tópico específico -->
+    <title>Planejamento e Chamamento Público - MROSC</title>
+    <!-- Mesmos estilos da página principal -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            color: #7f8c8d;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .progress-bar {
-            background: #ecf0f1;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            height: 100%;
-            width: 0%;
-            transition: width 0.5s ease;
-            border-radius: 5px;
-        }
-
-        .modules-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .module-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .module-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border-color: #3498db;
-        }
-
-        .module-card.completed {
-            border-color: #2ecc71;
-            background: rgba(46, 204, 113, 0.1);
-        }
-
-        .module-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-right: 15px;
-            color: white;
-        }
-
-        .module-1 .module-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .module-2 .module-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
-        .module-3 .module-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .module-4 .module-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
-
-        .module-title {
-            font-size: 1.4rem;
+        /* Estilos para o conteúdo do artigo */
+        .article-content h3 {
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a; /* Um azul mais escuro */
         }
-
-        .module-subtitle {
-            color: #7f8c8d;
-            font-size: 0.9rem;
+        .article-content p {
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
-
-        .module-content {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #ecf0f1;
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
         }
-
-        .module-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .content-section {
-            margin-bottom: 25px;
-        }
-
-        .content-section h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .content-section h3::before {
-            content: "→";
-            margin-right: 10px;
-            color: #3498db;
-            font-weight: bold;
-        }
-
-        .content-list {
-            list-style: none;
-            padding-left: 20px;
-        }
-
-        .content-list li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .content-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2ecc71;
-            font-weight: bold;
-        }
-
-        .quiz-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .quiz-question {
-            margin-bottom: 20px;
-        }
-
-        .quiz-question h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .quiz-options {
-            list-style: none;
-        }
-
-        .quiz-options li {
-            margin-bottom: 10px;
-        }
-
-        .quiz-options input[type="radio"] {
-            margin-right: 10px;
-        }
-
-        .quiz-options label {
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            display: block;
-        }
-
-        .quiz-options label:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px 5px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-        }
-
-        .resources {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .resources h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .resource-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .resource-link {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 20px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #2c3e50;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .resource-link:hover {
-            transform: translateY(-5px);
-            border-color: #3498db;
-            color: #2c3e50;
-        }
-
-        .completion-certificate {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            color: white;
-            text-align: center;
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 30px;
-            display: none;
-        }
-
-        .completion-certificate.show {
-            display: block;
-            animation: slideIn 0.8s ease;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .certificate-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            right: 25px;
-        }
-
-        .close:hover {
-            color: #000;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .modules-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 10px;
-            }
+        .article-content li {
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>📚 Capacitação Lei 13.019/2014</h1>
-            <p>Lei das Parcerias Voluntárias para Servidores Municipais</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-            <p id="progressText">Progresso: 0% concluído</p>
-        </div>
+<body class="bg-gray-100">
 
-        <div class="modules-container">
-            <!-- Módulo 1 -->
-            <div class="module-card module-1" onclick="toggleModule(1)">
-                <div class="module-header">
-                    <div class="module-icon">📋</div>
-                    <div>
-                        <div class="module-title">Módulo 1: Introdução à Lei</div>
-                        <div class="module-subtitle">Conceitos fundamentais e objetivos</div>
-                    </div>
-                </div>
-                <div class="module-content" id="module-1">
-                    <div class="content-section">
-                        <h3>Objetivos da Lei 13.019/2014</h3>
-                        <ul class="content-list">
-                            <li>Estabelecer regime jurídico das parcerias voluntárias</li>
-                            <li>Definir diretrizes para colaboração entre Estado e sociedade civil</li>
-                            <li>Fortalecer a transparência e controle social</li>
-                            <li>Promover o desenvolvimento sustentável</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Principais Conceitos</h3>
-                        <ul class="content-list">
-                            <li><strong>Organização da Sociedade Civil (OSC):</strong> Entidade privada sem fins lucrativos</li>
-                            <li><strong>Termo de Colaboração:</strong> Instrumento de parceria para consecução de finalidades de interesse público</li>
-                            <li><strong>Termo de Fomento:</strong> Instrumento de parceria para apoio e fomento</li>
-                            <li><strong>Acordo de Cooperação:</strong> Parceria de mútua cooperação</li>
-                        </ul>
-                    </div>
-                    <button class="btn" onclick="completeModule(1)">Concluir Módulo 1</button>
-                </div>
-            </div>
+    <div class="container mx-auto max-w-4xl p-6 sm:p-8">
+        
+        <!-- Botão para voltar ao mapa mental -->
+        <a href="index.html" class="inline-flex items-center mb-8 text-blue-600 hover:text-blue-800 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Voltar para o Mapa Mental
+        </a>
 
-            <!-- Módulo 2 -->
-            <div class="module-card module-2" onclick="toggleModule(2)">
-                <div class="module-header">
-                    <div class="module-icon">🤝</div>
-                    <div>
-                        <div class="module-title">Módulo 2: Instrumentos de Parceria</div>
-                        <div class="module-subtitle">Termos de colaboração, fomento e acordos</div>
-                    </div>
-                </div>
-                <div class="module-content" id="module-2">
-                    <div class="content-section">
-                        <h3>Termo de Colaboração</h3>
-                        <ul class="content-list">
-                            <li>Parceria para consecução de finalidades de interesse público</li>
-                            <li>Envolve transferência de recursos públicos</li>
-                            <li>Objeto definido em comum acordo</li>
-                            <li>Metas e indicadores obrigatórios</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Termo de Fomento</h3>
-                        <ul class="content-list">
-                            <li>Destina-se ao apoio e fomento</li>
-                            <li>Iniciativa deve partir da OSC</li>
-                            <li>Transferência de recursos financeiros</li>
-                            <li>Plano de trabalho detalhado</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Acordo de Cooperação</h3>
-                        <ul class="content-list">
-                            <li>Não envolve transferência de recursos</li>
-                            <li>Compartilhamento de conhecimentos e recursos</li>
-                            <li>Cooperação mútua</li>
-                            <li>Procedimento simplificado</li>
-                        </ul>
-                    </div>
-                    <button class="btn" onclick="completeModule(2)">Concluir Módulo 2</button>
-                </div>
-            </div>
+        <article class="bg-white p-8 sm:p-10 rounded-xl shadow-lg">
+            <header>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">1. Planejamento e Chamamento Público</h1>
+                <p class="text-lg text-gray-500 mt-2">A base para uma parceria de sucesso começa aqui.</p>
+            </header>
+            
+            <hr class="my-8">
 
-            <!-- Módulo 3 -->
-            <div class="module-card module-3" onclick="toggleModule(3)">
-                <div class="module-header">
-                    <div class="module-icon">⚖️</div>
-                    <div>
-                        <div class="module-title">Módulo 3: Procedimentos</div>
-                        <div class="module-subtitle">Chamamento público e seleção</div>
-                    </div>
-                </div>
-                <div class="module-content" id="module-3">
-                    <div class="content-section">
-                        <h3>Chamamento Público</h3>
-                        <ul class="content-list">
-                            <li>Procedimento obrigatório para seleção de OSCs</li>
-                            <li>Publicação de edital no site oficial</li>
-                            <li>Prazo mínimo de 30 dias para apresentação de propostas</li>
-                            <li>Critérios objetivos de seleção</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Dispensa de Chamamento</h3>
-                        <ul class="content-list">
-                            <li>Urgência decorrente de paralisação ou iminente paralisação</li>
-                            <li>Guerra, calamidade pública, grave perturbação da ordem</li>
-                            <li>Atividades voltadas ou vinculadas a serviços de educação, saúde e assistência social</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Comissão de Seleção</h3>
-                        <ul class="content-list">
-                            <li>Constituída por ato publicado em meio oficial de comunicação</li>
-                            <li>Servidor efetivo ou empregado público</li>
-                            <li>Conhecimento na área objeto da parceria</li>
-                        </ul>
-                    </div>
-                    <button class="btn" onclick="completeModule(3)">Concluir Módulo 3</button>
-                </div>
-            </div>
+            <!-- AQUI VOCÊ COLOCA O CONTEÚDO DO TREINAMENTO -->
+            <div class="article-content text-gray-700">
+                <h3>A Importância do Planejamento</h3>
+                <p>
+                    O planejamento é a fase em que a administração pública identifica uma necessidade, verifica a viabilidade de uma parceria com uma Organização da Sociedade Civil (OSC) e define os objetivos e metas a serem alcançados. Um bom planejamento evita problemas futuros na execução e na prestação de contas.
+                </p>
 
-            <!-- Módulo 4 -->
-            <div class="module-card module-4" onclick="toggleModule(4)">
-                <div class="module-header">
-                    <div class="module-icon">📊</div>
-                    <div>
-                        <div class="module-title">Módulo 4: Controle e Fiscalização</div>
-                        <div class="module-subtitle">Prestação de contas e monitoramento</div>
-                    </div>
-                </div>
-                <div class="module-content" id="module-4">
-                    <div class="content-section">
-                        <h3>Prestação de Contas</h3>
-                        <ul class="content-list">
-                            <li>Relatório de execução do objeto</li>
-                            <li>Demonstrativo sintético da execução físico-financeira</li>
-                            <li>Extrato da conta bancária específica</li>
-                            <li>Relação de bens adquiridos, produzidos ou construídos</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Monitoramento e Avaliação</h3>
-                        <ul class="content-list">
-                            <li>Acompanhamento sistemático da execução</li>
-                            <li>Verificação do cumprimento das metas</li>
-                            <li>Análise dos resultados alcançados</li>
-                            <li>Visitas técnicas in loco</li>
-                        </ul>
-                    </div>
-                    <div class="content-section">
-                        <h3>Transparência</h3>
-                        <ul class="content-list">
-                            <li>Publicação na internet das parcerias celebradas</li>
-                            <li>Divulgação de relatórios de execução</li>
-                            <li>Portal da transparência</li>
-                            <li>Acesso à informação</li>
-                        </ul>
-                    </div>
-                    <button class="btn" onclick="completeModule(4)">Concluir Módulo 4</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quiz Final -->
-        <div class="quiz-container" id="finalQuiz" style="display: none;">
-            <h2>🎯 Avaliação Final</h2>
-            <div class="quiz-question">
-                <h4>1. Qual instrumento deve ser usado quando há transferência de recursos públicos para consecução de finalidades de interesse público?</h4>
-                <ul class="quiz-options">
-                    <li><label><input type="radio" name="q1" value="a"> a) Acordo de Cooperação</label></li>
-                    <li><label><input type="radio" name="q1" value="b"> b) Termo de Colaboração</label></li>
-                    <li><label><input type="radio" name="q1" value="c"> c) Convênio</label></li>
-                    <li><label><input type="radio" name="q1" value="d"> d) Contrato</label></li>
+                <h3>O Edital de Chamamento Público</h3>
+                <p>
+                    O chamamento público é a regra para selecionar a OSC parceira, garantindo os princípios da isonomia, legalidade, impessoalidade, moralidade, publicidade, eficiência e julgamento objetivo. O edital deve ser claro e conter, no mínimo:
+                </p>
+                <ul>
+                    <li>O objeto da parceria;</li>
+                    <li>As metas e os resultados esperados;</li>
+                    <li>O valor de referência para a realização do objeto;</li>
+                    <li>Os critérios de seleção e julgamento das propostas;</li>
+                    <li>As obrigações das partes.</li>
                 </ul>
+
+                <h3>Exceções ao Chamamento Público</h3>
+                <p>
+                    A lei prevê algumas situações em que o chamamento público pode ser dispensado ou é inexigível, como em casos de urgência decorrente de calamidade pública ou quando a natureza do projeto torna inviável a competição.
+                </p>
+                <!-- FIM DO CONTEÚDO -->
             </div>
-
-            <div class="quiz-question">
-                <h4>2. O prazo mínimo para apresentação de propostas no chamamento público é de:</h4>
-                <ul class="quiz-options">
-                    <li><label><input type="radio" name="q2" value="a"> a) 15 dias</label></li>
-                    <li><label><input type="radio" name="q2" value="b"> b) 30 dias</label></li>
-                    <li><label><input type="radio" name="q2" value="c"> c) 45 dias</label></li>
-                    <li><label><input type="radio" name="q2" value="d"> d) 60 dias</label></li>
-                </ul>
-            </div>
-
-            <div class="quiz-question">
-                <h4>3. O Acordo de Cooperação se caracteriza por:</h4>
-                <ul class="quiz-options">
-                    <li><label><input type="radio" name="q3" value="a"> a) Transferência obrigatória de recursos</label></li>
-                    <li><label><input type="radio" name="q3" value="b"> b) Não envolver transferência de recursos</label></li>
-                    <li><label><input type="radio" name="q3" value="c"> c) Ser destinado apenas à educação</label></li>
-                    <li><label><input type="radio" name="q3" value="d"> d) Dispensar prestação de contas</label></li>
-                </ul>
-            </div>
-
-            <button class="btn btn-success" onclick="submitQuiz()">Enviar Respostas</button>
-        </div>
-
-        <!-- Certificado de Conclusão -->
-        <div class="completion-certificate" id="certificate">
-            <div class="certificate-icon">🏆</div>
-            <h2>Parabéns!</h2>
-            <p>Você concluiu com sucesso a capacitação sobre a Lei 13.019/2014</p>
-            <p><strong>Lei das Parcerias Voluntárias</strong></p>
-            <button class="btn" onclick="generateCertificate()">Gerar Certificado</button>
-        </div>
-
-        <!-- Recursos Adicionais -->
-        <div class="resources">
-            <h2>📚 Recursos Adicionais</h2>
-            <div class="resource-links">
-                <a href="#" class="resource-link" onclick="openModal('lawText')">
-                    <h3>📖 Texto Integral da Lei</h3>
-                    <p>Lei 13.019/2014 completa e atualizada</p>
-                </a>
-                <a href="#" class="resource-link" onclick="openModal('templates')">
-                    <h3>📝 Modelos e Templates</h3>
-                    <p>Documentos padrão para parcerias</p>
-                </a>
-                <a href="#" class="resource-link" onclick="openModal('cases')">
-                    <h3>💼 Casos Práticos</h3>
-                    <p>Exemplos reais de aplicação</p>
-                </a>
-                <a href="#" class="resource-link" onclick="openModal('faq')">
-                    <h3>❓ Perguntas Frequentes</h3>
-                    <p>Dúvidas mais comuns</p>
-                </a>
-            </div>
-        </div>
+        </article>
     </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalContent"></div>
-        </div>
-    </div>
+    <footer class="text-center py-8 text-gray-500">
+        <p>Desenvolvido para treinamento de servidores públicos.</p>
+    </footer>
 
-    <script>
-        let completedModules = new Set();
-        let currentProgress = 0;
-
-        function toggleModule(moduleNumber) {
-            const moduleContent = document.getElementById(`module-${moduleNumber}`);
-            const isActive = moduleContent.classList.contains('active');
-            
-            // Fechar todos os módulos
-            document.querySelectorAll('.module-content').forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Abrir o módulo clicado se não estava ativo
-            if (!isActive) {
-                moduleContent.classList.add('active');
-            }
-        }
-
-        function completeModule(moduleNumber) {
-            completedModules.add(moduleNumber);
-            updateProgress();
-            
-            // Marcar módulo como concluído visualmente
-            const moduleCard = document.querySelector(`.module-${moduleNumber}`);
-            moduleCard.classList.add('completed');
-            
-            // Fechar o módulo atual
-            document.getElementById(`module-${moduleNumber}`).classList.remove('active');
-            
-            // Mostrar quiz final se todos os módulos foram concluídos
-            if (completedModules.size === 4) {
-                document.getElementById('finalQuiz').style.display = 'block';
-                document.getElementById('finalQuiz').scrollIntoView({ behavior: 'smooth' });
-            }
-            
-            // Feedback visual
-            showNotification(`Módulo ${moduleNumber} concluído! ✅`);
-        }
-
-        function updateProgress() {
-            const progress = (completedModules.size / 4) * 100;
-            currentProgress = progress;
-            
-            document.getElementById('progressFill').style.width = `${progress}%`;
-            document.getElementById('progressText').textContent = `Progresso: ${Math.round(progress)}% concluído`;
-        }
-
-        function submitQuiz() {
-            const answers = {
-                q1: document.querySelector('input[name="q1"]:checked')?.value,
-                q2: document.querySelector('input[name="q2"]:checked')?.value,
-                q3: document.querySelector('input[name="q3"]:checked')?.value
-            };
-
-            // Verificar se todas as questões foram respondidas
-            if (!answers.q1 || !answers.q2 || !answers.q3) {
-                showNotification('Por favor, responda todas as questões!', 'warning');
-                return;
-            }
-
-            // Respostas corretas: b, b, b
-            const correctAnswers = { q1: 'b', q2: 'b', q3: 'b' };
-            let score = 0;
-
-            Object.keys(correctAnswers).forEach(question => {
-                if (answers[question] === correctAnswers[question]) {
-                    score++;
-                }
-            });
-
-            const percentage = (score / 3) * 100;
-
-            if (percentage >= 70) {
-                document.getElementById('certificate').classList.add('show');
-                document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
-                showNotification(`Parabéns! Você acertou ${score}/3 questões (${Math.round(percentage)}%)! 🎉`);
-                updateProgress();
-                document.getElementById('progressFill').style.width = '100%';
-                document.getElementById('progressText').textContent = 'Progresso: 100% concluído - Certificado disponível!';
-            } else {
-                showNotification(`Você acertou ${score}/3 questões (${Math.round(percentage)}%). Necessário 70% para aprovação. Tente novamente!`, 'warning');
-            }
-        }
-
-        function generateCertificate() {
-            const certificateContent = `
-                <div style="text-align: center; padding: 40px; border: 3px solid #2ecc71; border-radius: 20px; background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                    <h2 style="color: #2c3e50; margin-bottom: 30px;">🏆 CERTIFICADO DE CONCLUSÃO</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 20px;">Certificamos que</p>
-                    <h3 style="color: #2ecc71; margin: 20px 0; font-size: 1.5rem;">SERVIDOR MUNICIPAL</h3>
-                    <p style="margin-bottom: 20px;">concluiu com aproveitamento o curso de</p>
-                    <h3 style="color: #2c3e50; margin: 20px 0;">CAPACITAÇÃO LEI 13.019/2014<br>Lei das Parcerias Voluntárias</h3>
-                    <p style="margin: 30px 0;">Data: ${new Date().toLocaleDateString('pt-BR')}</p>
-                    <p style="font-size: 0.9rem; color: #7f8c8d;">Carga horária: 20 horas</p>
-                </div>
-            `;
-            
-            openModal('certificate');
-            document.getElementById('modalContent').innerHTML = certificateContent;
-        }
-
-        function openModal(content) {
-            const modal = document.getElementById('myModal');
-            const modalContent = document.getElementById('modalContent');
-            
-            const contents = {
-                lawText: `
-                    <h2>📖 Lei 13.019/2014 - Texto Integral</h2>
-                    <p>A Lei 13.019, de 31 de julho de 2014, estabelece o regime jurídico das parcerias entre a administração pública e as organizações da sociedade civil...</p>
-                    <p><strong>Link oficial:</strong> <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019.htm" target="_blank">Acesse o texto completo</a></p>
-                `,
+</body>
+</html>
