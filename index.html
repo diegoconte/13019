@@ -3,89 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- O título deve ser o do tópico específico -->
-    <title>Planejamento e Chamamento Público - MROSC</title>
-    <!-- Mesmos estilos da página principal -->
+    <title>Treinamento MROSC - Lei 13.019</title>
+    <!-- Tailwind CSS para estilização rápida e moderna -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos personalizados para complementar o Tailwind */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
+            background-color: #f0f4f8; /* Um cinza azulado bem claro */
         }
-        /* Estilos para o conteúdo do artigo */
-        .article-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #1e3a8a; /* Um azul mais escuro */
+        /* Efeito de linha conectora (visual) */
+        .mindmap-node {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .article-content p {
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .article-content ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .article-content li {
-            margin-bottom: 0.5rem;
+        .mindmap-node:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8">
 
-    <div class="container mx-auto max-w-4xl p-6 sm:p-8">
-        
-        <!-- Botão para voltar ao mapa mental -->
-        <a href="index.html" class="inline-flex items-center mb-8 text-blue-600 hover:text-blue-800 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-            Voltar para o Mapa Mental
+    <header class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Capacitação sobre o MROSC</h1>
+        <p class="text-lg text-gray-600 mt-2">Navegue pelo mapa mental da Lei 13.019/2014</p>
+    </header>
+
+    <!-- Container do Mapa Mental -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+
+        <!-- Tópico 1 -->
+        <a href="planejamento.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">1. Planejamento e Chamamento Público</h2>
+                <p class="text-gray-500 mt-2">A fase inicial e a importância da transparência.</p>
+            </div>
         </a>
 
-        <article class="bg-white p-8 sm:p-10 rounded-xl shadow-lg">
-            <header>
-                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">1. Planejamento e Chamamento Público</h1>
-                <p class="text-lg text-gray-500 mt-2">A base para uma parceria de sucesso começa aqui.</p>
-            </header>
-            
-            <hr class="my-8">
-
-            <!-- AQUI VOCÊ COLOCA O CONTEÚDO DO TREINAMENTO -->
-            <div class="article-content text-gray-700">
-                <h3>A Importância do Planejamento</h3>
-                <p>
-                    O planejamento é a fase em que a administração pública identifica uma necessidade, verifica a viabilidade de uma parceria com uma Organização da Sociedade Civil (OSC) e define os objetivos e metas a serem alcançados. Um bom planejamento evita problemas futuros na execução e na prestação de contas.
-                </p>
-
-                <h3>O Edital de Chamamento Público</h3>
-                <p>
-                    O chamamento público é a regra para selecionar a OSC parceira, garantindo os princípios da isonomia, legalidade, impessoalidade, moralidade, publicidade, eficiência e julgamento objetivo. O edital deve ser claro e conter, no mínimo:
-                </p>
-                <ul>
-                    <li>O objeto da parceria;</li>
-                    <li>As metas e os resultados esperados;</li>
-                    <li>O valor de referência para a realização do objeto;</li>
-                    <li>Os critérios de seleção e julgamento das propostas;</li>
-                    <li>As obrigações das partes.</li>
-                </ul>
-
-                <h3>Exceções ao Chamamento Público</h3>
-                <p>
-                    A lei prevê algumas situações em que o chamamento público pode ser dispensado ou é inexigível, como em casos de urgência decorrente de calamidade pública ou quando a natureza do projeto torna inviável a competição.
-                </p>
-                <!-- FIM DO CONTEÚDO -->
+        <!-- Tópico 2 -->
+        <a href="selecao.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">2. Seleção e Celebração</h2>
+                <p class="text-gray-500 mt-2">Como escolher e formalizar as parcerias.</p>
             </div>
-        </article>
-    </div>
+        </a>
 
-    <footer class="text-center py-8 text-gray-500">
+        <!-- Tópico 3 -->
+        <a href="execucao.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">3. Execução da Parceria</h2>
+                <p class="text-gray-500 mt-2">Direitos, deveres e gestão do dia a dia.</p>
+            </div>
+        </a>
+
+        <!-- Nó Central -->
+        <div class="mindmap-node col-span-1 md:col-span-3 flex items-center justify-center p-8 bg-blue-600 text-white rounded-xl shadow-xl order-first md:order-none">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold">O que é o MROSC?</h2>
+                <p class="mt-2 opacity-90">Entenda os conceitos fundamentais da Lei 13.019/2014, o Marco Regulatório das Organizações da Sociedade Civil.</p>
+            </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <a href="monitoramento.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">4. Monitoramento e Avaliação</h2>
+                <p class="text-gray-500 mt-2">Acompanhando os resultados e o impacto.</p>
+            </div>
+        </a>
+
+        <!-- Tópico 5 -->
+        <a href="prestacao_contas.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">5. Prestação de Contas</h2>
+                <p class="text-gray-500 mt-2">Como comprovar o uso dos recursos públicos.</p>
+            </div>
+        </a>
+
+        <!-- Tópico 6 -->
+        <a href="duvidas.html" class="mindmap-node group col-span-1 flex items-center justify-center p-6 bg-white rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">Glossário e Dúvidas</h2>
+                <p class="text-gray-500 mt-2">Termos importantes e perguntas frequentes.</p>
+            </div>
+        </a>
+    </main>
+
+    <footer class="text-center mt-12 text-gray-500">
         <p>Desenvolvido para treinamento de servidores públicos.</p>
     </footer>
 
