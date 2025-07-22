@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento e Chamamento Público - MROSC</title>
+    <!-- Mesmos estilos da página principal -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        /* Estilos para o conteúdo do artigo */
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a; /* Azul escuro para subtítulos */
+            border-left: 4px solid #3b82f6; /* Destaque azul */
+            padding-left: 1rem;
+        }
+        .article-content p, .article-content li {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #334155; /* Cinza escuro para melhor leitura */
+        }
+        .article-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box {
+            background-color: #eef2ff; /* Fundo azul bem claro */
+            border-left: 5px solid #6366f1; /* Borda roxa/azul */
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto max-w-4xl p-6 sm:p-8">
+        
+        <!-- Botão para voltar ao mapa mental -->
+        <a href="index.html" class="inline-flex items-center mb-8 text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Voltar para o Mapa Mental
+        </a>
+
+        <article class="bg-white p-8 sm:p-10 rounded-xl shadow-lg">
+            <header>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">1. Planejamento e Chamamento Público</h1>
+                <p class="text-lg text-gray-500 mt-2">A base para uma parceria de sucesso começa aqui.</p>
+            </header>
+            
+            <hr class="my-8">
+
+            <div class="article-content">
+                <p>
+                    A fase de planejamento é o alicerce de toda parceria regida pelo MROSC. É neste momento que a administração pública define o que precisa, por que precisa de uma parceria e como ela deverá funcionar. Um planejamento bem executado é o principal fator para o sucesso da política pública e para evitar problemas na execução e prestação de contas.
+                </p>
+
+                <div class="highlight-box">
+                    <p class="font-semibold text-lg text-indigo-800">Princípio-chave:</p>
+                    <p class="mt-2">O Chamamento Público é a <strong>regra</strong>. Ele garante que a escolha da organização parceira seja transparente, impessoal e baseada em critérios objetivos, selecionando a proposta mais vantajosa para a administração pública.</p>
+                </div>
+
+                <h3>Etapas do Planejamento</h3>
+                <p>
+                    Antes de publicar um edital, o gestor público deve realizar estudos e levantamentos para caracterizar a necessidade que justifica a parceria. Isso inclui:
+                </p>
+                <ul>
+                    <li><strong>Diagnóstico da Realidade:</strong> Entender o problema ou a demanda social que se pretende enfrentar.</li>
+                    <li><strong>Definição do Objeto:</strong> Descrever de forma clara e precisa o que será executado na parceria.</li>
+                    <li><strong>Alinhamento com Políticas Públicas:</strong> Garantir que a parceria esteja de acordo com os planos setoriais (de saúde, educação, assistência social, etc.).</li>
+                    <li><strong>Estimativa de Custos:</strong> Realizar uma pesquisa de preços para definir o valor de referência da parceria.</li>
+                    <li><strong>Definição de Metas e Indicadores:</strong> Estabelecer o que se espera alcançar (metas quantitativas e qualitativas) e como isso será medido (indicadores).</li>
+                </ul>
+
+                <h3>O Edital de Chamamento Público</h3>
+                <p>
+                    O edital é o documento que torna pública a intenção da administração de firmar uma parceria. Ele funciona como a "lei" do processo de seleção e deve ser o mais claro e completo possível.
+                </p>
+                <p>
+                    Elementos obrigatórios do edital:
+                </p>
+                <ul>
+                    <li><strong>Objeto da parceria:</strong> Descrição detalhada do projeto.</li>
+                    <li><strong>Datas e prazos:</strong> Cronograma completo, desde a apresentação das propostas até a divulgação do resultado.</li>
+                    <li><strong>Valor de referência:</strong> Teto de recursos a serem repassados.</li>
+                    <li><strong>Requisitos para participação:</strong> Quem pode e quem não pode concorrer.</li>
+                    <li><strong>Critérios de julgamento:</strong> Como as propostas serão avaliadas, com as respectivas pontuações.</li>
+                    <li><strong>Minuta do Termo de Colaboração ou Fomento:</strong> O modelo do contrato que será assinado.</li>
+                </ul>
+
+                <h3>Quando o Chamamento Público NÃO é Obrigatório?</h3>
+                <p>
+                    A Lei 13.019 prevê situações específicas onde o chamamento pode ser dispensado ou é considerado inexigível. É fundamental que essas exceções sejam devidamente justificadas no processo administrativo.
+                </p>
+                <ul>
+                    <li><strong>Dispensa:</strong> Em casos de urgência (calamidade pública, por exemplo) ou para atividades de baixo valor (definido em decreto).</li>
+                    <li><strong>Inexigibilidade:</strong> Quando a competição é inviável, pois o objeto da parceria só pode ser executado por uma organização específica (por exemplo, por ser uma atividade credenciada ou de natureza singular).</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+
+    <footer class="text-center py-8 text-gray-500">
+        <p>Desenvolvido para treinamento de servidores públicos.</p>
+    </footer>
+
+</body>
+</html>
